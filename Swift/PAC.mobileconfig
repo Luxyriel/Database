@@ -63,7 +63,7 @@ Allowing installation means you agree to the Terms and Services above.</string>
         <key>ProxyType</key>
         <string>Auto</string>
         <key>ProxyPACURL</key>
-        <string>https://raw.githubusercontent.com/longthinh/Database/main/Swift/Supervised.js</string>
+        <string>https://raw.githubusercontent.com/Luxyriel/Database/main/Swift/Supervised.js</string>
         <key>ProxyPACFallbackAllowed</key>
         <false/>
         <key>ProxyCaptiveLoginAllowed</key>
