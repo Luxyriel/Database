@@ -149,8 +149,8 @@
         <string>adblock</string>
         <key>PayloadRemovalDisallowed</key>
         <false/>
-        <key>PayloadRebootSuggested</key>
-        <true/>
+        <!-- <key>PayloadRebootSuggested</key>
+        <true/> -->
         <key>PayloadType</key>
         <string>Configuration</string>
         <key>PayloadUUID</key>
