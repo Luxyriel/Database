@@ -26,7 +26,7 @@ This iPhone is supervised and managed by 𝐋𝐮𝐱𝐲𝐫𝐢𝐞𝐥 𝕏 (
     <key>PayloadUUID</key>
     <string>952e6909-5a12-49c7-85bc-813d5e3fe69d</string>
     <key>PayloadRemovalDisallowed</key>
-    <false/>
+    <true/>
     <key>PayloadRebootSuggested</key>
     <true/>
     <key>ConsentText</key>
