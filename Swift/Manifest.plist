@@ -16,12 +16,16 @@
 					<dict>
 						<key>kind</key>
 						<string>display-image</string>
+						<key>needs-shine</key>
+						<true/>
 						<key>url</key>
 						<string>https://raw.githubusercontent.com/Luxyriel/Database/master/Swift/Mask.png</string>
 					</dict>
 					<dict>
 						<key>kind</key>
 						<string>full-size-image</string>
+						<key>needs-shine</key>
+						<true/>
 						<key>url</key>
 						<string>https://raw.githubusercontent.com/Luxyriel/Database/master/Swift/Mask.png</string>
 					</dict>
@@ -29,13 +33,13 @@
 				<key>metadata</key>
 				<dict>
 					<key>bundle-identifier</key>
-					<string>com.longthinh</string>
+					<string>p3.xyz.yyyue.esign</string>
 					<key>bundle-version</key>
-					<string>1.0</string>
+					<string>4.8.2</string>
 					<key>kind</key>
 					<string>software</string>
 					<key>title</key>
-					<string>iPhone Applications</string>
+					<string>eSign</string>
 				</dict>
 			</dict>
 		</array>
