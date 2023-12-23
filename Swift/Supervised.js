@@ -7,7 +7,8 @@ var blacklist = {
   // "mesu.apple.com": 1,
   // "updates.cdn-apple.com": 1,
   // "updates-http.cdn-apple.com": 1,
-  "su.itunes.apple.com": 1,
+  // "su.itunes.apple.com": 1,
+  "example.com": 1,
 };
 function FindProxyForURL(url, host) {
   host = host.toLowerCase();
