@@ -2,7 +2,7 @@
 
 const $ = new API("Wishlist", true);
 
-let appid = [""];
+let appid = ["6448680871","1463795397","1536754048","6444911377","6444068649","775737172","1498235191","6467821003","1462586500","6444063249","6446304087","6448220941","1549224518","1483387513","6446047813","1623230250","1572666937","1511763524","1585833321","1481781647","1435127111","1548193893","502633252","1558391784","1049254261","1463298887","1489698531","450464147","1527036273","1436902243","1254940903","1530968324","1524435907","1510265452","1512938504","1175490870","1517339257","1458212928","1405459188","904237743","1312014438","1459055246","896694807","1252015438","1443988620","918751511","1344204781","1442620678","932747118"];
 if ($.read("appid") != "" && $.read("appid") != undefined) {
   appid = $.read("appid").split(",");
 }
@@ -78,14 +78,14 @@ async function postData(d) {
                     JSON.stringify(infos[x.trackId])
                   ) {
                     if (x.version !== showData[x.trackId].v) {
-                      notifys.push(`${x.trackName} 🧩 ${x.version}`);
+                      notifys.push(`${x.trackName} ⚓︎ ${x.version}`);
                     }
                     if (x.formattedPrice !== showData[x.trackId].p) {
-                      notifys.push(`${x.trackName} 🏷 ${x.formattedPrice}`);
+                      notifys.push(`${x.trackName} ⚡︎ ${x.formattedPrice}`);
                     }
                   }
                 } else {
-                  notifys.push(`${x.trackName} · ${x.version}`);
+                  notifys.push(`${x.trackName}  ${x.version}`);
 
                   notifys.push(`${x.trackName} · ${x.formattedPrice}`);
                 }
@@ -115,7 +115,7 @@ async function postData(d) {
 function notify(notifys) {
   notifys = notifys.join(`\n`);
   console.log(notifys);
-  $.notify(`${flag(region)} 𝐋𝐮𝐱𝐲𝐫𝐢𝐞𝐥 𝕏`, ``, notifys);
+  $.notify(`${flag(region)}Hi 𝐋𝐮𝐱𝐲𝐫𝐢𝐞𝐥 𝕏`, ``, notifys);
 }
 
 function flag(x) {
