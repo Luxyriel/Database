@@ -77,17 +77,16 @@ async function postData(d) {
                     JSON.stringify(showData[x.trackId]) !==
                     JSON.stringify(infos[x.trackId])
                   ) {
-                    if (x.version !== showData[x.trackId].v) {
-                      notifys.push(`${x.trackName} ⚓︎ ${x.version}`);
-                    }
                     if (x.formattedPrice !== showData[x.trackId].p) {
                       notifys.push(`${x.trackName} ⚡︎ ${x.formattedPrice}`);
                     }
+                    if (x.version !== showData[x.trackId].v) {
+                      notifys.push(`${x.trackName} ⚓︎ ${x.version}`);
+                    }
                   }
                 } else {
-                  notifys.push(`${x.trackName} · ${x.version}`);
-
                   notifys.push(`${x.trackName}  ${x.formattedPrice}`);
+                  notifys.push(`${x.trackName} · ${x.version}`);
                 }
               });
             }
