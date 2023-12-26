@@ -18,7 +18,7 @@ compatibility-mode = 1/3
 tcp-connection = true
 skip-server-cert-verify = true
 
-This iPhone is managed by 𝐋𝐮𝐱𝐲𝐫𝐢𝐞𝐥 𝕏 (longthinh)</string>
+This iPhone is managed by 𝐋𝐮𝐱𝐲𝐫𝐢𝐞𝐥 𝕏</string>
         <key>PayloadOrganization</key>
         <string> Copyright by longthinh</string>
         <key>PayloadIdentifier</key>
