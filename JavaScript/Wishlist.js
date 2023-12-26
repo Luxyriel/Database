@@ -114,7 +114,7 @@ async function postData(d) {
 function notify(notifys) {
   notifys = notifys.join(`\n`);
   console.log(notifys);
-  $.notify(`${flag(region)}Hi 𝐋𝐮𝐱𝐲𝐫𝐢𝐞𝐥 𝕏`, ``, notifys);
+  $.notify(`${flag(region)} 𝐋𝐮𝐱𝐲𝐫𝐢𝐞𝐥 𝕏`, ``, notifys);
 }
 
 function flag(x) {
