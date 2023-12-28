@@ -85,7 +85,7 @@ async function postData(d) {
                     }
                   }
                 } else {
-                  notifys.push(`${x.trackName}  ${x.formattedPrice}`);
+                  notifys.push(`${x.trackName} · ${x.formattedPrice}`);
                   notifys.push(`${x.trackName} · ${x.version}`);
                 }
               });
