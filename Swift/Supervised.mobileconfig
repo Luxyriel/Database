@@ -19,7 +19,7 @@ skip-server-cert-verify = true
 
 This iPhone is managed by 𝐋𝐮𝐱𝐲𝐫𝐢𝐞𝐥 𝕏</string>
         <key>PayloadOrganization</key>
-        <string> Copyright by longthinh</string>
+        <string>Copyright by longthinh</string>
         <key>PayloadIdentifier</key>
         <string>com.apple.Luxyriel</string>
         <key>PayloadUUID</key>
