@@ -10,12 +10,12 @@
 Disable OTA Updates
 Block App Updates on the App Store
 
+Compatible
+
 Quantumult X (normal mode)
 
-Surge Network (recommended)
-compatibility-mode = 1/3
-tcp-connection = true
-skip-server-cert-verify = true
+Surge Network (VIF only)
+compatibility-mode = 1
 
 This iPhone is managed by 𝐋𝐮𝐱𝐲𝐫𝐢𝐞𝐥 𝕏</string>
         <key>PayloadOrganization</key>
