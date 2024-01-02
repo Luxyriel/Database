@@ -108,7 +108,7 @@ async function postData(d) {
     } else {
       let endTime = new Date().getTime();
       let executionTime = endTime - startTime;
-      console.log("Timeout: " + executionTime + "ms - completed");
+      console.log("\nTimeout: " + executionTime + "ms - completed");
       $.done();
     }
   } catch (e) {
