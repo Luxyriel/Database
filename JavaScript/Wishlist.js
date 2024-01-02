@@ -103,7 +103,7 @@ async function postData(d) {
       notify(notifys);
       $.done();
     } else {
-      console.log(" endScript LOG: RES nothing");
+      console.log("No new updates found");
       $.done();
     }
   } catch (e) {
