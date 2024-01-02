@@ -108,7 +108,7 @@ async function postData(d) {
     } else {
       let endTime = new Date().getTime();
       let executionTime = endTime - startTime;
-      console.log("Thoi gian hoan thanh: " + executionTime + "Mili giay");
+      console.log("Timeout: " + executionTime + "ms - completed");
       $.done();
     }
   } catch (e) {
