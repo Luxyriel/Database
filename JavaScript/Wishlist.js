@@ -13,9 +13,12 @@ if ($.read("region") != "" && $.read("region") != undefined) {
   region = $.read("region");
 }
 
+getData(appid);
+
+let notifys = [];
+
 let startTime = new Date().getTime();
 
-getData(appid);
 function getData(x) {
   let matchData = {};
   x.forEach((n) => {
@@ -48,7 +51,6 @@ function getData(x) {
   }
 }
 
-let notifys = [];
 async function postData(d) {
   try {
     let showData = $.read("compare");
@@ -108,12 +110,28 @@ async function postData(d) {
     } else {
       let endTime = new Date().getTime();
       let executionTime = endTime - startTime;
-      console.log("\ntimeout " + executionTime + "ms");
+      let speedNotification = getSpeedNotification(executionTime);
+      console.log("\nTimeout" + " " + executionTime + "ms" + " " + speedNotification + " - " + "success");
       $.done();
     }
   } catch (e) {
     console.log(e);
   }
+}
+
+function getSpeedNotification(executionTime) {
+  if (executionTime <= 250) {
+    return "very fast";
+  } else if (executionTime <= 500) {
+    return "fast";
+  } else if (executionTime <= 750) {
+    return "normal";
+  } else if (executionTime >= 750) {
+    return "slow";
+  } else if (executionTime >= 1000) {
+    return "very slow";
+  }
+  return "unknowns";
 }
 
 function notify(notifys) {
