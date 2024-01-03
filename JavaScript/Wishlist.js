@@ -81,15 +81,15 @@ async function postData(d) {
                     JSON.stringify(infos[x.trackId])
                   ) {
                     if (x.formattedPrice !== showData[x.trackId].p) {
-                      notifys.push(`${x.trackName} ⚡︎ ${x.formattedPrice}`);
+                      notifys.push(`${x.trackName} ⚡︎ ${x.formattedPrice}\n`);
                     }
                     if (x.version !== showData[x.trackId].v) {
-                      notifys.push(`${x.trackName} ⚓︎ ${x.version}`);
+                      notifys.push(`${x.trackName} ⚓︎ ${x.version}\n`);
                     }
                   }
                 } else {
-                  notifys.push(`${x.trackName} · ${x.formattedPrice}`);
-                  notifys.push(`${x.trackName} · ${x.version}`);
+                  notifys.push(`\n${x.trackName} · ${x.formattedPrice}`);
+                  notifys.push(`\n${x.trackName} · ${x.version}`);
                 }
               });
             }
@@ -108,7 +108,7 @@ async function postData(d) {
     } else {
       let endTime = new Date().getTime();
       let executionTime = endTime - startTime;
-      console.log("\nTimeout: " + executionTime + "ms - completed");
+      console.log("\ntimeout " + executionTime + "ms - success");
       $.done();
     }
   } catch (e) {
