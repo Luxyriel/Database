@@ -83,10 +83,10 @@ async function postData(d) {
                     JSON.stringify(infos[x.trackId])
                   ) {
                     if (x.formattedPrice !== showData[x.trackId].p) {
-                      notifys.push(`${x.trackName} ⚡︎ ${x.formattedPrice}`);
+                      notifys.push(`${x.trackName} ⚡︎ ${x.formattedPrice}\n`);
                     }
                     if (x.version !== showData[x.trackId].v) {
-                      notifys.push(`${x.trackName} ⚓︎ ${x.version}`);
+                      notifys.push(`${x.trackName} ⚓︎ ${x.version}\n`);
                     }
                   }
                 } else {
@@ -111,7 +111,16 @@ async function postData(d) {
       let endTime = new Date().getTime();
       let executionTime = endTime - startTime;
       let speedNotification = getSpeedNotification(executionTime);
-      console.log("\nTimeout" + " " + executionTime + "ms" + " " + speedNotification + " - " + "success");
+      console.log(
+        "\nTimeout" +
+          " " +
+          executionTime +
+          "ms" +
+          " " +
+          speedNotification +
+          " - " +
+          "success"
+      );
       $.done();
     }
   } catch (e) {
@@ -120,18 +129,18 @@ async function postData(d) {
 }
 
 function getSpeedNotification(executionTime) {
-  if (executionTime <= 250) {
-    return "very fast";
-  } else if (executionTime <= 500) {
-    return "fast";
-  } else if (executionTime <= 750) {
-    return "normal";
+  if (executionTime >= 1000) {
+    return "very slow";
   } else if (executionTime >= 750) {
     return "slow";
-  } else if (executionTime >= 1000) {
-    return "very slow";
+  } else if (executionTime >= 500) {
+    return "normal";
+  } else if (executionTime >= 250) {
+    return "fast";
+  } else if (executionTime < 250) {
+    return "very fast";
   }
-  return "unknowns";
+  return "unknown";
 }
 
 function notify(notifys) {
@@ -142,117 +151,17 @@ function notify(notifys) {
 
 function flag(x) {
   var flags = new Map([
-    ["AC", "🇦🇨"],
-    ["AF", "🇦🇫"],
-    ["AI", "🇦🇮"],
-    ["AL", "🇦🇱"],
-    ["AM", "🇦🇲"],
-    ["AQ", "🇦🇶"],
-    ["AR", "🇦🇷"],
-    ["AS", "🇦🇸"],
-    ["AT", "🇦🇹"],
     ["AU", "🇦🇺"],
-    ["AW", "🇦🇼"],
-    ["AX", "🇦🇽"],
-    ["AZ", "🇦🇿"],
-    ["BB", "🇧🇧"],
-    ["BD", "🇧🇩"],
-    ["BE", "🇧🇪"],
-    ["BF", "🇧🇫"],
-    ["BG", "🇧🇬"],
-    ["BH", "🇧🇭"],
-    ["BI", "🇧🇮"],
-    ["BJ", "🇧🇯"],
-    ["BM", "🇧🇲"],
-    ["BN", "🇧🇳"],
-    ["BO", "🇧🇴"],
     ["BR", "🇧🇷"],
-    ["BS", "🇧🇸"],
-    ["BT", "🇧🇹"],
-    ["BV", "🇧🇻"],
-    ["BW", "🇧🇼"],
-    ["BY", "🇧🇾"],
-    ["BZ", "🇧🇿"],
     ["CA", "🇨🇦"],
-    ["CF", "🇨🇫"],
-    ["CH", "🇨🇭"],
-    ["CK", "🇨🇰"],
-    ["CL", "🇨🇱"],
-    ["CM", "🇨🇲"],
     ["CN", "🇨🇳"],
-    ["CO", "🇨🇴"],
-    ["CP", "🇨🇵"],
-    ["CR", "🇨🇷"],
-    ["CU", "🇨🇺"],
-    ["CV", "🇨🇻"],
-    ["CW", "🇨🇼"],
-    ["CX", "🇨🇽"],
-    ["CY", "🇨🇾"],
-    ["CZ", "🇨🇿"],
     ["DE", "🇩🇪"],
-    ["DG", "🇩🇬"],
-    ["DJ", "🇩🇯"],
-    ["DK", "🇩🇰"],
-    ["DM", "🇩🇲"],
-    ["DO", "🇩🇴"],
-    ["DZ", "🇩🇿"],
-    ["EA", "🇪🇦"],
-    ["EC", "🇪🇨"],
-    ["EE", "🇪🇪"],
-    ["EG", "🇪🇬"],
-    ["EH", "🇪🇭"],
-    ["ER", "🇪🇷"],
-    ["ES", "🇪🇸"],
-    ["ET", "🇪🇹"],
     ["EU", "🇪🇺"],
-    ["FI", "🇫🇮"],
-    ["FJ", "🇫🇯"],
-    ["FK", "🇫🇰"],
-    ["FM", "🇫🇲"],
-    ["FO", "🇫🇴"],
-    ["FR", "🇫🇷"],
-    ["GA", "🇬🇦"],
-    ["GB", "🇬🇧"],
     ["HK", "🇭🇰"],
-    ["ID", "🇮🇩"],
-    ["IE", "🇮🇪"],
-    ["IL", "🇮🇱"],
-    ["IM", "🇮🇲"],
     ["IN", "🇮🇳"],
-    ["IS", "🇮🇸"],
-    ["IT", "🇮🇹"],
     ["JP", "🇯🇵"],
-    ["KR", "🇰🇷"],
-    ["MO", "🇲🇴"],
-    ["MX", "🇲🇽"],
-    ["MY", "🇲🇾"],
-    ["NL", "🇳🇱"],
-    ["PH", "🇵🇭"],
-    ["RO", "🇷🇴"],
-    ["RS", "🇷🇸"],
-    ["RU", "🇷🇺"],
-    ["RW", "🇷🇼"],
-    ["SA", "🇸🇦"],
-    ["SB", "🇸🇧"],
-    ["SC", "🇸🇨"],
-    ["SD", "🇸🇩"],
-    ["SE", "🇸🇪"],
-    ["SG", "🇸🇬"],
-    ["TH", "🇹🇭"],
-    ["TN", "🇹🇳"],
-    ["TO", "🇹🇴"],
-    ["TR", "🇹🇷"],
-    ["TV", "🇹🇻"],
-    ["TW", "🇨🇳"],
     ["UK", "🇬🇧"],
-    ["UM", "🇺🇲"],
     ["US", "🇺🇸"],
-    ["UY", "🇺🇾"],
-    ["UZ", "🇺🇿"],
-    ["VA", "🇻🇦"],
-    ["VE", "🇻🇪"],
-    ["VG", "🇻🇬"],
-    ["VI", "🇻🇮"],
     ["VN", "🇻🇳"],
   ]);
   return flags.get(x.toUpperCase());
@@ -260,15 +169,13 @@ function flag(x) {
 
 function ENV() {
   const isQX = typeof $task !== "undefined";
-  const isLoon = typeof $loon !== "undefined";
-  const isSurge = typeof $httpClient !== "undefined" && !isLoon;
+  const isSurge = typeof $httpClient !== "undefined";
   const isJSBox = typeof require == "function" && typeof $jsbox != "undefined";
   const isNode = typeof require == "function" && !isJSBox;
   const isRequest = typeof $request !== "undefined";
   const isScriptable = typeof importModule !== "undefined";
   return {
     isQX,
-    isLoon,
     isSurge,
     isNode,
     isJSBox,
@@ -282,7 +189,7 @@ function HTTP(
     baseURL: "",
   }
 ) {
-  const { isQX, isLoon, isSurge, isScriptable, isNode } = ENV();
+  const { isQX, isSurge, isScriptable, isNode } = ENV();
   const methods = ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS", "PATCH"];
   const URL_REGEX =
     /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
@@ -320,7 +227,7 @@ function HTTP(
         method,
         ...options,
       });
-    } else if (isLoon || isSurge || isNode) {
+    } else if (isSurge || isNode) {
       worker = new Promise((resolve, reject) => {
         const request = isNode ? require("request") : $httpClient;
         request[method.toLowerCase()](options, (err, response, body) => {
@@ -383,7 +290,7 @@ function HTTP(
 }
 
 function API(name = "untitled", debug = false) {
-  const { isQX, isLoon, isSurge, isNode, isJSBox, isScriptable } = ENV();
+  const { isQX, isSurge, isNode, isJSBox, isScriptable } = ENV();
   return new (class {
     constructor(name, debug) {
       this.name = name;
@@ -419,7 +326,7 @@ function API(name = "untitled", debug = false) {
 
     initCache() {
       if (isQX) this.cache = JSON.parse($prefs.valueForKey(this.name) || "{}");
-      if (isLoon || isSurge)
+      if (isSurge)
         this.cache = JSON.parse($persistentStore.read(this.name) || "{}");
 
       if (isNode) {
@@ -458,7 +365,7 @@ function API(name = "untitled", debug = false) {
     persistCache() {
       const data = JSON.stringify(this.cache, null, 2);
       if (isQX) $prefs.setValueForKey(data, this.name);
-      if (isLoon || isSurge) $persistentStore.write(data, this.name);
+      if (isSurge) $persistentStore.write(data, this.name);
       if (isNode) {
         this.node.fs.writeFileSync(
           `${this.name}.json`,
@@ -483,7 +390,7 @@ function API(name = "untitled", debug = false) {
       this.log(`SET ${key}`);
       if (key.indexOf("#") !== -1) {
         key = key.substr(1);
-        if (isSurge || isLoon) {
+        if (isSurge) {
           return $persistentStore.write(data, key);
         }
         if (isQX) {
@@ -502,7 +409,7 @@ function API(name = "untitled", debug = false) {
       this.log(`READ ${key}`);
       if (key.indexOf("#") !== -1) {
         key = key.substr(1);
-        if (isSurge || isLoon) {
+        if (isSurge) {
           return $persistentStore.read(key);
         }
         if (isQX) {
@@ -520,7 +427,7 @@ function API(name = "untitled", debug = false) {
       this.log(`DELETE ${key}`);
       if (key.indexOf("#") !== -1) {
         key = key.substr(1);
-        if (isSurge || isLoon) {
+        if (isSurge) {
           return $persistentStore.write(null, key);
         }
         if (isQX) {
@@ -549,17 +456,6 @@ function API(name = "untitled", debug = false) {
             url: openURL,
           }
         );
-      }
-
-      if (isLoon) {
-        let opts = {};
-        if (openURL) opts["openUrl"] = openURL;
-        if (mediaURL) opts["mediaUrl"] = mediaURL;
-        if (JSON.stringify(opts) === "{}") {
-          $notification.post(title, subtitle, content);
-        } else {
-          $notification.post(title, subtitle, content, opts);
-        }
       }
 
       if (isNode || isScriptable) {
@@ -596,7 +492,7 @@ function API(name = "untitled", debug = false) {
     }
 
     done(value = {}) {
-      if (isQX || isLoon || isSurge) {
+      if (isQX || isSurge) {
         $done(value);
       } else if (isNode && !isJSBox) {
         if (typeof $context !== "undefined") {
