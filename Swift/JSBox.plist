@@ -33,13 +33,13 @@
 				<key>metadata</key>
 				<dict>
 					<key>bundle-identifier</key>
-					<string>p3.xyz.yyyue.esign</string>
+					<string>*</string>
 					<key>bundle-version</key>
-					<string>4.8.2</string>
+					<string>*</string>
 					<key>kind</key>
 					<string>software</string>
 					<key>title</key>
-					<string>eSign</string>
+					<string>iPhone Application</string>
 				</dict>
 			</dict>
 		</array>
