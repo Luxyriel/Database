@@ -83,10 +83,10 @@ async function postData(d) {
                     JSON.stringify(infos[x.trackId])
                   ) {
                     if (x.formattedPrice !== showData[x.trackId].p) {
-                      notifys.push(`${x.trackName} ⚡︎ ${x.formattedPrice}` + `\n`);
+                      notifys.push(`${x.trackName} ⚡︎ ${x.formattedPrice}`);
                     }
                     if (x.version !== showData[x.trackId].v) {
-                      notifys.push(`${x.trackName} ⚓︎ ${x.version}` + `\n`);
+                      notifys.push(`${x.trackName} ⚓︎ ${x.version}`);
                     }
                   }
                 } else {
